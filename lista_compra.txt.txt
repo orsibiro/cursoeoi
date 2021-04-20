@@ -1,4 +1,3 @@
 Lista de la compra
--Platanos
 -Manzanas
-hola
+-Sandias
