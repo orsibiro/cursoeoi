@@ -1,0 +1,15 @@
+{% extends 'comun/base.html' %}
+
+{% block content %}
+
+<div class="container">
+<div class="row">
+{% for mh in filas %}
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      {% include 'metahumans/metahuman_card.html' %}
+  </div>
+{% endfor %}
+</div>
+</div>
+    
+{% endblock content %}

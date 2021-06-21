@@ -1,0 +1,21 @@
+<div class="card">
+  <img src="/media/{{ mh.foto }}" class="card-img-top img-fluid" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ mh.nombre }}<h5>
+        <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar"
+                aria-valuenow="{{ mh.nivel }}"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: {{mh.nivel}}%;">
+                {{ mh.nivel}}
+            </div>
+        </div>
+    <ul class="list-group">
+        {% if mh.equipo.exists %}<li class="list-group-item"><big>{{ mh.equipo }}</big></li>{% endif %}
+        {% for poder in mh.poderes.all %} 
+        <li class="list-group-item">{{ poder.nombre }}</li>   
+        {% endfor %}
+    </ul>
+  </div>
+</div>

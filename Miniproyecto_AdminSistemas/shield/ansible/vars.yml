@@ -1,0 +1,15 @@
+---
+project_name: shield
+install_root: /ansible
+wsgi_module: shield-wsgi
+pythonpath: "/usr/bin/python3"
+project_repo: https://github.com/orsibiro/shield
+fixtures_file: metahumans/fixtures/initial_data.json
+ssh_private_key: ~/.ssh/id_rsa
+
+system_packages:
+  - git
+  - python3-pip
+  - python3-dev
+
+ssh_local_path

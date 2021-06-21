@@ -1,0 +1,38 @@
+---
+- hosts: servers
+  vars_files:
+    - vars.yml
+  gather_facts: false
+  become: yes
+
+  tasks:
+    - name: Hacer un git clone del repositorio # git clone https://github.com/orsibiro/shield.git
+      git:
+        repo: https://github.com/orsibiro/shield.git
+        dest: "{{ project_path }}/shield"
+        accept_hostkey: yes
+        force: true
+
+    - name: Install python packages
+      pip:
+        requirements: "{{ install_root }}/{{ project_name }}/requirements.txt"
+
+    - name: Asegura que el fichero manage.py tiene permisos de ejecución
+      file:
+        path: "{{ install_root }}/{{ project_name }}/manage.py"
+        mode: '0777'
+
+    - name: django migrate
+      django_manage:
+        command: migrate
+        project_path: "{{ install_root }}/{{ project_name }}"
+
+    - name: Cargar los datos iniciales
+      django_manage:
+        command: loaddata
+        project_path: "{{ install_root }}/{{ project_name }}"
+        fixtures: "{{ install_root }}/{{ project_name }}/metahumans/fixtures/initial_data.json" 
+
+        
+
+    

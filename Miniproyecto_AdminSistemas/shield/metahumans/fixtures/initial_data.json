@@ -1,0 +1,902 @@
+[
+{
+    "model": "metahumans.equipo",
+    "pk": 1,
+    "fields": {
+        "nombre": "Patrulla X",
+        "cuartel": "Academia Xavier para Jóvenes Dotados"
+    }
+},
+{
+    "model": "metahumans.equipo",
+    "pk": 2,
+    "fields": {
+        "nombre": "Cuatro Fantásticos",
+        "cuartel": "Edificio Baxter"
+    }
+},
+{
+    "model": "metahumans.equipo",
+    "pk": 3,
+    "fields": {
+        "nombre": "Alpha Flight",
+        "cuartel": "Departamento H"
+    }
+},
+{
+    "model": "metahumans.equipo",
+    "pk": 4,
+    "fields": {
+        "nombre": "Vengadores",
+        "cuartel": "Torre Stark"
+    }
+},
+{
+    "model": "metahumans.equipo",
+    "pk": 5,
+    "fields": {
+        "nombre": "Big Hero 6",
+        "cuartel": "Parque de atracciones Cool World (Japón)"
+    }
+},
+{
+    "model": "metahumans.equipo",
+    "pk": 6,
+    "fields": {
+        "nombre": "Hermandad De Mutantes",
+        "cuartel": "Asteriode M"
+    }
+},
+{
+    "model": "metahumans.equipo",
+    "pk": 7,
+    "fields": {
+        "nombre": "Inhumanos",
+        "cuartel": "Attilan"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 1,
+    "fields": {
+        "nombre": "vuelo"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 2,
+    "fields": {
+        "nombre": "pirokinesis"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 3,
+    "fields": {
+        "nombre": "supervelocidad"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 4,
+    "fields": {
+        "nombre": "descarga de energía"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 5,
+    "fields": {
+        "nombre": "estallido sónico"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 6,
+    "fields": {
+        "nombre": "agilidad"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 7,
+    "fields": {
+        "nombre": "superfuerza"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 8,
+    "fields": {
+        "nombre": "magia"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 9,
+    "fields": {
+        "nombre": "resistencia"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 10,
+    "fields": {
+        "nombre": "invulnerabilidad"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 11,
+    "fields": {
+        "nombre": "rayos ópticos"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 12,
+    "fields": {
+        "nombre": "artes marciales"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 13,
+    "fields": {
+        "nombre": "supersentidos"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 14,
+    "fields": {
+        "nombre": "campos de fuerza"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 15,
+    "fields": {
+        "nombre": "criokinesis"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 16,
+    "fields": {
+        "nombre": "regeneración"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 17,
+    "fields": {
+        "nombre": "rayos repulsores"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 18,
+    "fields": {
+        "nombre": "sentidos aumentados"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 19,
+    "fields": {
+        "nombre": "garras"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 20,
+    "fields": {
+        "nombre": "control del magnetismo"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 21,
+    "fields": {
+        "nombre": "elasticidad"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 22,
+    "fields": {
+        "nombre": "invisibilidad"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 23,
+    "fields": {
+        "nombre": "telepatía"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 24,
+    "fields": {
+        "nombre": "control mental"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 25,
+    "fields": {
+        "nombre": "trepar paredes"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 26,
+    "fields": {
+        "nombre": "manipulación del clima"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 27,
+    "fields": {
+        "nombre": "descarga de energia"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 28,
+    "fields": {
+        "nombre": "resitencia"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 29,
+    "fields": {
+        "nombre": "control de densidad"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 30,
+    "fields": {
+        "nombre": "intangibilidad"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 31,
+    "fields": {
+        "nombre": "telekinesis"
+    }
+},
+{
+    "model": "metahumans.poder",
+    "pk": 32,
+    "fields": {
+        "nombre": "pyrokinesis"
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 1,
+    "fields": {
+        "nombre": "Angel",
+        "identidad": "Warren Kenneth Worthington III",
+        "nivel": 18,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/angel.png",
+        "poderes": [
+            1
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 2,
+    "fields": {
+        "nombre": "Antorcha Humana",
+        "identidad": "Johnny Storm",
+        "nivel": 34,
+        "equipo": 2,
+        "activo": true,
+        "foto": "metahumans/human-torch.png",
+        "poderes": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 3,
+    "fields": {
+        "nombre": "Aurora",
+        "identidad": "Jeanne-Marie Beaubier",
+        "nivel": 31,
+        "equipo": 3,
+        "activo": true,
+        "foto": "metahumans/aurora.png",
+        "poderes": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 4,
+    "fields": {
+        "nombre": "Banshee",
+        "identidad": "Sean Cassidy",
+        "nivel": 23,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/banshee.png",
+        "poderes": [
+            1,
+            5
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 5,
+    "fields": {
+        "nombre": "Bestia",
+        "identidad": "Henry \"Hank\" McCoy",
+        "nivel": 18,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/beast.png",
+        "poderes": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 6,
+    "fields": {
+        "nombre": "Bruja Escarlata",
+        "identidad": "Wanda Maximoff",
+        "nivel": 67,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/scarlet-witch.png",
+        "poderes": [
+            8
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 7,
+    "fields": {
+        "nombre": "Capitán América",
+        "identidad": "Steve Rogers",
+        "nivel": 25,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/captain-america.png",
+        "poderes": [
+            6,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 8,
+    "fields": {
+        "nombre": "Capitán Marvel",
+        "identidad": "Carol Danvers",
+        "nivel": 61,
+        "equipo": null,
+        "activo": true,
+        "foto": "metahumans/captain-marvel.png",
+        "poderes": [
+            1,
+            3,
+            4,
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 9,
+    "fields": {
+        "nombre": "Coloso",
+        "identidad": "Piotr \"Peter\" Nikolayevich Rasputin",
+        "nivel": 39,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/colossus.png",
+        "poderes": [
+            7,
+            9,
+            10
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 10,
+    "fields": {
+        "nombre": "Cíclope",
+        "identidad": "Scott Summers",
+        "nivel": 15,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/cyclops.png",
+        "poderes": [
+            11
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 11,
+    "fields": {
+        "nombre": "Daredevil",
+        "identidad": "Matthew Murdock",
+        "nivel": 16,
+        "equipo": null,
+        "activo": true,
+        "foto": "metahumans/daredevil.png",
+        "poderes": [
+            6,
+            12,
+            13
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 12,
+    "fields": {
+        "nombre": "Doctor Extraño",
+        "identidad": "Stephen Strange",
+        "nivel": 76,
+        "equipo": null,
+        "activo": true,
+        "foto": "metahumans/doctor-strange.png",
+        "poderes": [
+            12
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 13,
+    "fields": {
+        "nombre": "Estrella del Norte",
+        "identidad": "Jean-Paul Beaubier",
+        "nivel": 31,
+        "equipo": 3,
+        "activo": true,
+        "foto": "metahumans/northstar.png",
+        "poderes": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 14,
+    "fields": {
+        "nombre": "Fuego Solar",
+        "identidad": "Shiro Yoshida",
+        "nivel": 32,
+        "equipo": 5,
+        "activo": true,
+        "foto": "metahumans/sunfire.png",
+        "poderes": [
+            1,
+            4
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 15,
+    "fields": {
+        "nombre": "Guardian (Arma Alfa)",
+        "identidad": "James Hudson",
+        "nivel": 46,
+        "equipo": 3,
+        "activo": true,
+        "foto": "metahumans/guardian.png",
+        "poderes": [
+            3,
+            4,
+            7,
+            9,
+            14
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 16,
+    "fields": {
+        "nombre": "Halcón",
+        "identidad": "Samuel Thomas \"Sam\" Wilson",
+        "nivel": 12,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/falcon.png",
+        "poderes": [
+            1,
+            12
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 17,
+    "fields": {
+        "nombre": "Hombre de Hielo",
+        "identidad": "Robert \"Bobby\" Louis Drake",
+        "nivel": 32,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/iceman.png",
+        "poderes": [
+            15
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 18,
+    "fields": {
+        "nombre": "Hulk",
+        "identidad": "Bruce Banner",
+        "nivel": 78,
+        "equipo": null,
+        "activo": true,
+        "foto": "metahumans/hulk.png",
+        "poderes": [
+            7,
+            9,
+            16
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 19,
+    "fields": {
+        "nombre": "Ironman",
+        "identidad": "Tony Stark",
+        "nivel": 48,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/ironman.png",
+        "poderes": [
+            1,
+            4,
+            7,
+            9,
+            17
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 20,
+    "fields": {
+        "nombre": "Juggernaut",
+        "identidad": "Cain Marko",
+        "nivel": 52,
+        "equipo": 6,
+        "activo": true,
+        "foto": "metahumans/juggernaut.png",
+        "poderes": [
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 21,
+    "fields": {
+        "nombre": "La Cosa",
+        "identidad": "Benjamin J. Grimm",
+        "nivel": 52,
+        "equipo": 2,
+        "activo": true,
+        "foto": "metahumans/the-thing.png",
+        "poderes": [
+            7,
+            9
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 22,
+    "fields": {
+        "nombre": "Lobezno",
+        "identidad": "James \"Logan\" Howlett",
+        "nivel": 23,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/wolverine.png",
+        "poderes": [
+            6,
+            7,
+            16,
+            18,
+            19
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 23,
+    "fields": {
+        "nombre": "Magneto",
+        "identidad": "Max Eisenhardt",
+        "nivel": 51,
+        "equipo": 6,
+        "activo": true,
+        "foto": "metahumans/magneto.png",
+        "poderes": [
+            1,
+            20
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 24,
+    "fields": {
+        "nombre": "Mercurio",
+        "identidad": "Pietro Maximoff",
+        "nivel": 32,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/quicksilver.png",
+        "poderes": [
+            3
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 25,
+    "fields": {
+        "nombre": "Mister Fantástico",
+        "identidad": "Reed Richards",
+        "nivel": 45,
+        "equipo": 2,
+        "activo": true,
+        "foto": "metahumans/mr-fantastic.png",
+        "poderes": [
+            21
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 26,
+    "fields": {
+        "nombre": "Mujer Invisible",
+        "identidad": "Susan Storm",
+        "nivel": 54,
+        "equipo": 2,
+        "activo": true,
+        "foto": "metahumans/invisible-woman.png",
+        "poderes": [
+            14,
+            22
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 27,
+    "fields": {
+        "nombre": "Pantera negra",
+        "identidad": "T'Challa",
+        "nivel": 18,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/black-panther.png",
+        "poderes": [
+            6,
+            7,
+            13
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 28,
+    "fields": {
+        "nombre": "Profesor X",
+        "identidad": "Charles Xavier",
+        "nivel": 50,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/professor-x.png",
+        "poderes": [
+            23,
+            24
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 29,
+    "fields": {
+        "nombre": "Rayo Negro",
+        "identidad": "Blackagar Boltagon",
+        "nivel": 62,
+        "equipo": 7,
+        "activo": true,
+        "foto": "metahumans/black-bolt.png",
+        "poderes": [
+            5,
+            7,
+            23
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 30,
+    "fields": {
+        "nombre": "Spiderman",
+        "identidad": "Peter Parker",
+        "nivel": 17,
+        "equipo": null,
+        "activo": true,
+        "foto": "metahumans/spiderman.png",
+        "poderes": [
+            6,
+            7,
+            13,
+            25
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 31,
+    "fields": {
+        "nombre": "Thunderbird",
+        "identidad": "John Proudstar",
+        "nivel": 15,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/thunderbird.png",
+        "poderes": [
+            6,
+            7,
+            13
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 32,
+    "fields": {
+        "nombre": "Tormenta",
+        "identidad": "Ororo Munroe",
+        "nivel": 32,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/storm.png",
+        "poderes": [
+            1,
+            26,
+            27
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 33,
+    "fields": {
+        "nombre": "Vindicador",
+        "identidad": "Heather MacNeil Hudson",
+        "nivel": 46,
+        "equipo": 3,
+        "activo": true,
+        "foto": "metahumans/vindicator.png",
+        "poderes": [
+            1,
+            7,
+            9,
+            14,
+            17
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 34,
+    "fields": {
+        "nombre": "Visión",
+        "identidad": "Victor Shade",
+        "nivel": 51,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/vision.png",
+        "poderes": [
+            1,
+            7,
+            27,
+            28,
+            29,
+            30
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 35,
+    "fields": {
+        "nombre": "Viuda Negra",
+        "identidad": "Natasha Romanoff",
+        "nivel": 15,
+        "equipo": 4,
+        "activo": true,
+        "foto": "metahumans/black-widow.png",
+        "poderes": [
+            6,
+            12,
+            27
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 36,
+    "fields": {
+        "nombre": "Spiderwoman",
+        "identidad": "Jessica Drew",
+        "nivel": 23,
+        "equipo": null,
+        "activo": true,
+        "foto": "metahumans/spiderwoman.png",
+        "poderes": [
+            1,
+            4,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "metahumans.metahumano",
+    "pk": 37,
+    "fields": {
+        "nombre": "Fenix Oscura",
+        "identidad": "Jean Grey",
+        "nivel": 94,
+        "equipo": 1,
+        "activo": true,
+        "foto": "metahumans/dark-phoenix.png",
+        "poderes": [
+            1,
+            4,
+            23,
+            31,
+            32
+        ]
+    }
+}
+]

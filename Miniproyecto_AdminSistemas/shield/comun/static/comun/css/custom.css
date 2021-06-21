@@ -1,0 +1,9 @@
+.hero {
+    background-image: url("/static/comun/img/helicarrier.webp");
+    background-size: cover;
+    color: #FFFFFF;
+    }
+
+.hero > .legend {
+    background-color: rgba(0,0,0,0.5);
+}
