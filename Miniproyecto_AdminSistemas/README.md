@@ -15,7 +15,7 @@ git clone https://github.com/orsibiro/shield.git
 3. Entra en la carpeta `shield` y crea el entorno virtual:
 ```
 cd shield
-python3-m venv .venv
+python3 -m venv .venv
 ```
 4. Activa el entorno virtual:
 ```
@@ -237,18 +237,18 @@ ansible-playbook -i hosts deploy.yml --user=vagrant --ask-pass
 10. 
 
 ## Pasos para la dockerización del proyecto
-Antes que nada tienes que instalar Docker en tu ordenador.
+Antes que nada tienes que instalar Docker en tu ordenador y asegurarte de que tienes la versión 2 de WSL si utilizas Windows.
 
 1. Como primer paso tienes que asegurarte de que tu aplicación funciona a nivel local. Para eso dentro de la carpeta del proyecto ejecuta el siguiente comando:
 ```
 python manage.py runserver
 ```
 2. Si has comprobado que tu aplicación funciona el siguiente paso es que crees un archivo con el nombre `Dockerfile`
-- La primera línea de este archivo es la directiva de sintaxis. No es obligatorio ponerlo, pero no viene mal
+- La primera línea de este archivo es la directiva de sintaxis. No es obligatorio ponerlo, pero no viene mal si está.
 ```
 # syntax=docker/dockerfile:1
 ```
-- Poner el software base del que vamos a partir. En este caso es uno que ya tiene las librerías de Python instaladas.
+- Después tienes que poner el software base del que vamos a partir. En este caso es uno que ya tiene las librerías de Python instaladas.
 ```
 FROM python:3.9-slim-buster
 ```
@@ -261,7 +261,7 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 ```
-- Si ya tienes insatalado todos los `requirements` copia todos los ficheros del código del proyecto.
+- Si ya tienes insatalado todos los `requirements` copia todos los ficheros del código del proyecto con el siguiente comando:
 ```
 COPY . .
 ```
@@ -274,36 +274,14 @@ CMD [ "python3", "manage.py", "runserver", "127.0.0.1:8000"]
 ```
 docker build . --tag shield
 ```
-4. Con el comando `docker images`
+4. Con el comando `docker images` puedes comprobar si se ha creado bien la imagen de Docker.
 
 5. Ejecuta la imagen con el comando: 
 ```
-docker run --publish 8000:8000 python-docker
+docker run --publish 8000:8000 shield
 curl localhost:8000
 ```
-
+6. Con el comando `docker ps` puedes comprobar qué contenedores se están ejecutando en tu máquina.
 
 ## Movidas durante el proyecto
 1. Para la primera parte del proyecto tuve que usar la versión 1 de wsl porque con la 2 vagrant no funciona, sin embargo, para la parte de Docker hay que utilizar la versión 2 porque con la otra éste no funciona.
-
-2. Para crear la imagen también me daba fallos docker de permiso aunque en realidad tenía todos los permisos que hacían falta.
-```
-docker build . --tag shield
-
-[+] Building 8.8s (8/11)
- => [internal] load build definition from Dockerfile                                                                                 0.1s 
- => => transferring dockerfile: 271B                                                                                                 0.0s 
- => [internal] load .dockerignore                                                                                                    0.1s 
- => => transferring context: 2B                                                                                                      0.0s 
- => resolve image config for docker.io/docker/dockerfile:1                                                                           1.2s 
- => CACHED docker-image://docker.io/docker/dockerfile:1@sha256:e2a8561e419ab1ba6b2fe6cbdf49fd92b95912df1cf7d313c3e2230a333fdbcc      0.0s 
- => [internal] load metadata for docker.io/library/python:3.9-slim-buster                                                            0.7s 
- => CACHED [1/5] FROM docker.io/library/python:3.9-slim-buster@sha256:80b238ba357d98813bcc425f505dfa238f49cf5f895492fc2667af118dcca  0.0s 
- => ERROR [internal] load build context                                                                                              6.1s 
- => => transferring context: 48.11MB                                                                                                 6.0s 
- => [2/5] WORKDIR /app1                                                                                                              0.2s 
-------
- > [internal] load build context:
-------
-error from sender: open .venv\lib\python3.8\site-packages\ansible_collections\community\general\tests\integration\targets\django_manage\files\base_test\1045-single-app-project\single_app_project: Access is denied.
-```
