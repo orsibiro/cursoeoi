@@ -1,6 +1,6 @@
 # Bienvenid@ al Miniproyecto del módulo Administración de Sistemas
 
-Este miniproyecto consiste en descargar el proyecto SHIELD que habíamos preparado durante el módulo Desarrollo Web, y desplegarlo en una máquina virtual.
+Este miniproyecto consiste en descargar el proyecto SHIELD que habíamos preparado durante el módulo Desarrollo Web, desplegarlo en local y después desplegar y automatizar el despliegue con Fabric, Ansible y Docker en una máquina virtual.
 
 ## Pasos para instalar la applicación SHIELD en tu máquina local:
 
@@ -29,11 +29,7 @@ pip install -r requirements.txt
 ```
 python3 manage.py migrate
 ```
-7. Carga los datos del fichero `superheroes.csv`
-```
-python3 manage.py metahumans/management/commands/load_from_csv.py
-```
-*Si con este comando no te funciona, puedes utilizar el comando `loaddata`:
+7. Carga los datos del fichero con el comando `loaddata`:
 ```
 python3 manage.py loaddata metahumans/fixtures/initial_data.json
 ```
@@ -63,7 +59,7 @@ import sys
 import os
 from fabric import Connection, task
 ```
-3. Define las variables que utilizarás como constantes en el despliegue de la aplicación:
+3. Dentro del `fabfile` define las variables que utilizarás como constantes en el despliegue de la aplicación:
 ```
 PROJECT_NAME = "shield"
 PROJECT_PATH = f"~/{PROJECT_NAME}"
@@ -71,8 +67,7 @@ REPO_URL = "https://github.com/orsibiro/shield"
 VENV_PYTHON = f'{PROJECT_PATH}/.venv/bin/python'
 VENV_PIP = f'{PROJECT_PATH}/.venv/bin/pip'
 ```
-
-3. Crea una tarea para ajustar la IP del servidor remoto y las credenciales en las líneas 11-15 del script `fabfile.py` de este modo:
+4. Crea una tarea para ajustar la IP del servidor remoto y las credenciales en las líneas 11-15 del script `fabfile.py` de este modo:
 ```
 @task
 def development(ctx):
@@ -80,7 +75,7 @@ def development(ctx):
     ctx.host = '192.168.33.10'
     ctx.connect_kwargs = {"password": "vagrant"}
 ```
-3. Crea una función para establecer la conexión usando los parámetros introducidos en la tarea anterior. De este modo podrás reutilizar esta función en otras tareas más adelante.
+5. Crea una función para establecer la conexión usando los parámetros introducidos en la tarea anterior. De este modo podrás reutilizar esta función en otras tareas más adelante.
 ```
 def get_connection(ctx):
     try:
@@ -89,7 +84,7 @@ def get_connection(ctx):
     except Exception as e:
         return None
 ```
-4. Crea una tarea `deploy`. Esta tarea realizará el despliegue de la aplicación en la máquina de vagrant.
+6. Crea una tarea `deploy`. Esta tarea realizará el despliegue de la aplicación en la máquina de vagrant.
 ```
 @task
 def deploy(ctx):
@@ -99,7 +94,7 @@ def deploy(ctx):
 ```
 Ahora veremos las tareas que debes crear para ejecutar ahora de forma automática los mismos pasos que ya habías realizado en tu máquina local.
 
-- Tarea para el `git clone`:
+- Tarea para hacer el `git clone`:
 ```
 @task
 def clone(ctx):
@@ -186,7 +181,6 @@ def migrate(ctx):
     with conn.cd(PROJECT_PATH):
         conn.run(f"{VENV_PYTHON} manage.py migrate")
 ```
-
 5. Añade todas las tareas creadas a la función `deploy`. Tiene que quedar así:
 ```
 @task
@@ -206,6 +200,12 @@ def deploy(ctx):
 ```
 fab development deploy
 ```
+7. Crea tu propio usuario superuser para poder entrar en el admin de django
+```
+python3 manage.py createsuperuser
+Username: admin
+Email address: admin@example.com
+```
 ## Pasos para aprovisionar una máquina y desplegar el proyecto con Ansible
 
 1. Instala Ansible en tu sistema operativo:
@@ -218,23 +218,25 @@ pip install ansible
 ```
 3. Crea una carpeta `ansible` dentro del proyecto.
 
-4. Crea un fichero llamado `hosts` dentro de la carpeta `ansible`
+4. Crea un fichero llamado `hosts` dentro de la carpeta `ansible`. Este fichero va a contener el inventario. En este caso la dirección IP de la máquina virtual que vas a usar y la indicación sobre qué intérprete de Python tendrá que usar.
+```
+[servers]
+192.168.33.10 ansible_python_interpreter=/usr/bin/python3
+```
+5. Crea un fichero `vars.yml` que va a contener las variables que utilizarás en el proyecto.
 
-5. Crea un fichero `vars.yml`
+6. Crea un fichero `provision.yml` que tendrás que ejecutar para aprovisionar la máquina.
 
-6. Crea un fichero `provision.yml`
+7. Crea un fichero `deploy.yml` con el que realizarás el despliegue de la aplicación.
 
-7. Crea un fichero `deploy.yml`
-
-8. Dentro de la carpeta `ansible` ejecuta el siguiente comando:
+8. Dentro de la carpeta `ansible` ejecuta el siguiente comando para aprovisionar la máquina:
 ```
 ansible-playbook -i hosts provision.yml --user=vagrant --ask-pass
 ```
-9. Dentro de la carpeta `ansible` ejecuta el siguiente comando:
+9. Dentro de la carpeta `ansible` ejecuta el siguiente comando para desplegar la aplicación:
 ```
 ansible-playbook -i hosts deploy.yml --user=vagrant --ask-pass
 ```
-10. 
 
 ## Pasos para la dockerización del proyecto
 Antes que nada tienes que instalar Docker en tu ordenador y asegurarte de que tienes la versión 2 de WSL si utilizas Windows.
@@ -283,5 +285,3 @@ curl localhost:8000
 ```
 6. Con el comando `docker ps` puedes comprobar qué contenedores se están ejecutando en tu máquina.
 
-## Movidas durante el proyecto
-1. Para la primera parte del proyecto tuve que usar la versión 1 de wsl porque con la 2 vagrant no funciona, sin embargo, para la parte de Docker hay que utilizar la versión 2 porque con la otra éste no funciona.

@@ -6,10 +6,10 @@
   become: yes
 
   tasks:
-    - name: Hacer un git clone del repositorio # git clone https://github.com/orsibiro/shield.git
+    - name: git clone
       git:
         repo: https://github.com/orsibiro/shield.git
-        dest: "{{ project_path }}/shield"
+        dest: "{{ install_root }}/shield"
         accept_hostkey: yes
         force: true
 
@@ -17,7 +17,7 @@
       pip:
         requirements: "{{ install_root }}/{{ project_name }}/requirements.txt"
 
-    - name: Asegura que el fichero manage.py tiene permisos de ejecución
+    - name: giving permissions to file manage.py
       file:
         path: "{{ install_root }}/{{ project_name }}/manage.py"
         mode: '0777'
@@ -27,7 +27,7 @@
         command: migrate
         project_path: "{{ install_root }}/{{ project_name }}"
 
-    - name: Cargar los datos iniciales
+    - name: django load data
       django_manage:
         command: loaddata
         project_path: "{{ install_root }}/{{ project_name }}"

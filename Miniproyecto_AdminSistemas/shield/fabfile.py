@@ -4,7 +4,7 @@ from fabric import Connection, task
 
 PROJECT_NAME = "shield"
 PROJECT_PATH = f"~/{PROJECT_NAME}"
-REPO_URL = "https://github.com/orsibiro/shield"
+REPO_URL = "https://github.com/orsibiro/shield.git"
 VENV_PYTHON = f'{PROJECT_PATH}/.venv/bin/python'
 VENV_PIP = f'{PROJECT_PATH}/.venv/bin/pip'
 
@@ -79,6 +79,7 @@ def create_venv(ctx):
     else:
         conn = get_connection(ctx)
     with conn.cd(PROJECT_PATH):
+        conn.run("sudo apt-get install python3-venv")
         conn.run("python3 -m venv .venv")
         conn.run(f"{VENV_PIP} install -r requirements.txt")
 
@@ -106,6 +107,7 @@ def loaddata(ctx):
     with conn.cd(PROJECT_PATH):
         conn.run(f"{VENV_PYTHON} manage.py loaddata metahumans/fixtures/initial_data.json")
 
+        
 @task
 def deploy(ctx):
     conn = get_connection(ctx)
