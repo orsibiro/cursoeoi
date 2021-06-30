@@ -1,0 +1,64 @@
+<MyLayout>
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+        canvas.before:
+            Color:
+                rgba: 0, 0.5, 0.5, 1
+            Rectangle:
+                # self here refers to the widget i.e BoxLayout
+                pos: self.pos
+                size: self.size
+        Image:
+            source: "logo.png"
+            size_hint: 0.1, 0.1
+            pos_hint: {'x': 0.02, 'y': 0.85}
+        Label:
+            text: "Cifrador de texto S.H.I.E.L.D."
+            size_hint: 0.8, 0.1
+            pos_hint: {'x': 0.15, 'y': 0.85}
+            font_size: "36dp"
+            font_name: "font.ttf"
+            color: 0, 0, 0
+            text_size: self.size
+        TextInput:
+            id: s
+            size_hint: 0.96, 0.1
+            pos_hint: {'x': 0.02, 'y': 0.7}
+            on_text: root.cambio_texto(self)
+        Slider:
+            id: slider1
+            min: -26
+            max: 26
+            orientation: "horizontal"
+            value: 0
+            size_hint: 0.8, 0.1
+            pos_hint: {'x': 0.02, 'y': 0.55}
+            on_value: root.show_slider(self)
+        TextInput:
+            id:out
+            multiline: False
+            text_size: self.size
+            halign: 'center'
+            valign: 'center'
+            text: str(int(slider1.value))
+            readonly: True
+            value: slider1.value
+            size_hint: 0.1, 0.1
+            pos_hint: {'x': 0.85, 'y': 0.55}
+            font_size: "36dp"
+            font_name: "font.ttf"
+        TextInput:
+            id:out
+            multiline: True
+            text: str(button)
+            readonly: True
+            size_hint: 0.96, None
+            pos_hint: {'x': 0.02, 'y': 0.3}
+            
+        Button:
+            id: button
+            text: "Cifra"
+            pos_hint: {'x': 0.02, 'y': 0.02} 
+            size_hint: 0.96, 0.1
+            on_press: root.cifra()
