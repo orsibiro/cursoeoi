@@ -35,7 +35,7 @@ class DomoticLight:                                        # creamos la clase
             self.client.check_msg()                        # combrueba los mensajes
             if not self.boton.value():
                 self.client.publish(TOPIC, b"hola soy Orsi")  # al pulsar el botón enviamos el mensaje
-                time.sleep_ms(500)
+                time.sleep_ms(500)                            # le damos una pausa para que no publique varios mensajes seguidos
 
     def enviar_msg(self):
         global hay_que_enviar
